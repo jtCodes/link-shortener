@@ -13,7 +13,7 @@ router.get('/:id', function (req, res, next) {
             res.send('link not found')
         } else {
             console.log()
-            res.redirect(result.rows[0].original)
+            res.send(result)
         }
     })
 });

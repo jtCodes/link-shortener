@@ -10,6 +10,7 @@ router.get('/new/(*)', function (req, res, next) {
   const values = [req.originalUrl.substring(5)]
   const original = req.originalUrl.substring(5)
   const domain = 'lnk-sh.herokuapp.com/'
+  
   if (validator.isURL(original)) {
     db.query(text, values, (err, result) => {
       if (err) {
