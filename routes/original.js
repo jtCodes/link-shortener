@@ -8,9 +8,9 @@ router.get('/:id', function (req, res, next) {
     const id = Base62.decode(req.params.id)
     console.log(Base62.encode(28474575))
     db.query("SELECT original FROM links WHERE id =" + id, (err, result) => {
-        console.log("result", result.rows[0])
+        console.log("result", result.rows)
         console.log(result.rows[0] === ' ')
-        if (result.rows[0] === ' ') {
+        if (result.rows[0] === undefined) {
             res.send('link not found')
         } else {
             console.log()
